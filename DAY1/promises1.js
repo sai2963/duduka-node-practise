@@ -10,13 +10,6 @@ const getText=(path)=>{
         })
     })
 }
-const start =async()=>{
-    try{
-    const a = await getText('./content/subfolder/first.txt')
-    console.log(a);
-    }
-    catch (error){
-        console.log(error)
-    }
-}
-start()
+getText('./content/subfolder/first.txt')
+.then((result)=>console.log(result))
+.catch((err)=>console.log(err))
