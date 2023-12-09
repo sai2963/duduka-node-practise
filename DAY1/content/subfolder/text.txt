@@ -1,1 +1,1 @@
-hi all second text
+this has both hi all first text,hi all second text

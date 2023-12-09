@@ -13,3 +13,4 @@ const getText=(path)=>{
 getText('./content/subfolder/first.txt')
 .then((results)=>console.log(results))
 .catch((err)=>console.log(err))
+.finally(()=> console.log('done'))

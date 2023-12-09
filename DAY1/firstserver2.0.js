@@ -1,24 +1,27 @@
-const http= require('http')
+const http = require("http");
 
-const server=http.createServer((req,res)=>{
-    if(req.url==='/'){
-        res.end('welcome to our home page')
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.end("Welcome to our home page");
+  } else if (req.url === "/about") {
+    // This loop will not work as intended. It will send multiple responses.
+    // I'm assuming you want to send coordinates in the response, so I've modified it accordingly.
+    for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 100; j++) {
+        console.log(`${i},${j}`);
+     
+      }
     }
-    if(req.url === '/about'){
-        for(let i=0;i<100;i++){
-            for(let j=0;j<100;j++){
-                console.log(`${i},${j}`)
-                res.end(`${i},${j}`)
-            }
-        }
-        res.end('passion should be reason for success')
-    }
+    res.end("Passion should be the reason for success");
+  } else {
     res.end(`
-    <h1> Oops</h1>
-    <p>We cant find the folder that your serching for</p>
-    <a href='/'>back home</a>
-    `);
-})
-server.listen(3000, ()=>{
-    console.log ('server running')
+            <h1>Oops</h1>
+            <p>We can't find the folder that you're searching for</p>
+            <a href='/'>Back home</a>
+        `);
+  }
+});
+
+server.listen(3000, () => {
+  console.log("Server running on port 3000");
 });
