@@ -6,6 +6,6 @@ adds();
 console.log(names);
 console.log(value);
 //const sayhi = require('./two');
-names.sayhi('suhan');
+names.sayhi('suhas');
 names.sayhi(names.jhon);
 names.sayhi(names.dhoni);
